@@ -26,6 +26,8 @@ return (
             style={styles.input} 
             placeholder="0"
             onChangeText={onHandlerChange}
+            //para solo escribir dos numeros maximos en el campo 
+            maxLength={2}
             />
             <View style={styles.buttonContainer}>
                  <Button 
