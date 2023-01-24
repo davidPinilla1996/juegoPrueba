@@ -11,7 +11,7 @@ export const StartGame = () => {
    const onHandlerChange = (text) => {
     setEnteredValue(text.replace(/[^0-9]/g, ""));
    };
-
+   
 return (
 <TouchableWithoutFeedback onPress={() => {
     Keyboard.dismiss();
