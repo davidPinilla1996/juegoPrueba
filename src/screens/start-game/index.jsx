@@ -1,7 +1,7 @@
 import  React, { useState }  from "react";
 import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert} from "react-native";
 import { styles } from "./styles";
-import { Card } from "../../components";
+import { Card, NumberContainer } from "../../components";
 import { colors } from "../../constants";
 
 
@@ -9,6 +9,7 @@ export const StartGame = () => {
 
     const [enteredValue, setEnteredValue] = useState("");
     const [confirmed, setConfirmed] = useState(false);
+    const [selectedNumber, setSelectedNumber] = useState(null);
 //con esta funcion valido que todo lo que se escriba en el campo sea unicamente un numero del 1 hasta el 99
    const onHandlerChange = (text) => {
     setEnteredValue(text.replace(/[^0-9]/g, ""));
@@ -27,8 +28,30 @@ const onHandleConfirm = () => {
    const chosenNumber = parseInt(enteredValue, 10);
    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
        Alert.alert("Numero invalido", "el numero tiene que estar entre el 1 y el 99", [{text: "Entendido", style: "destructive", onPress: onHandleReset}]);
+   }else{
+    //cuando se cumpla la confirmacion el estado pasara a true 
+    setConfirmed(true);
+    //setiando el numero que ya previamente elejimos y lo guardamos dentro de setSelectedNumber
+    setSelectedNumber(chosenNumber);
+    //vaciamos el capo despues de darle confirmar 
+    setEnteredValue("");
    }
 };
+
+const onHandleStartGame = () => null;
+
+const Confirmed = () => 
+confirmed ? (
+    <Card style={styles.confirmedContainer}>
+        <Text style={styles.confirmedTitle}>Numero seleccionado</Text>
+        <NumberContainer number={selectedNumber} />
+        <Button 
+        title="Iniciar juego"
+        onpress={onHandleStartGame}
+        color={colors.primary}
+        />
+    </Card>
+) : null;
 
    
 return (
@@ -59,6 +82,7 @@ return (
                  />
             </View>   
         </Card>
+        <Confirmed />
     </View>
     </TouchableWithoutFeedback>  
     )
