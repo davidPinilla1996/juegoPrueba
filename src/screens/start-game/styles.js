@@ -38,5 +38,15 @@ export const styles = StyleSheet.create({
         width: "75%",
         justifyContent: "space-around",
         marginTop: 20
+    },
+    confirmedContainer: {
+        width: "73%",
+        height: 180,
+        justifyContent: "space-around",
+        alignItems: "center",
+        marginVertical: 30
+    },
+    confirmedTitle: {
+        fontSize: 16
     }
 });
