@@ -1,5 +1,6 @@
 //importando los componentes
 import { View } from "react-native";
+//importamos el Header
 import { Header } from "./components";
 //importamos el styles de src/styles.js
 import {styles} from './styles.js';
