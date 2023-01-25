@@ -16,7 +16,7 @@ return (
 <TouchableWithoutFeedback onPress={() => {
     Keyboard.dismiss();
 }}>  
-    <View style={styles.container}>
+    <View style={styles.container}> 
         <Text style={styles.titlee}>Comenzar juegoo</Text>
         <Card style={styles.inputContainer}>
             <Text style={styles.label}>Escribe un numero</Text>
