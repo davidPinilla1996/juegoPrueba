@@ -5,10 +5,12 @@ import { Card, NumberContainer } from "../../components";
 import { colors } from "../../constants";
 
 
-export const StartGame = () => {
+const StartGame = ({onHandleStarGame}) => {
 
-    const [enteredValue, setEnteredValue] = useState("");
+    const [enteredValue, setEnteredValue] = useState(""); 
+    //con este estado estamos confirmando el numero con el que vamos a empezar a juagar
     const [confirmed, setConfirmed] = useState(false);
+    //creamos un estado para que la app sepa cual es el numero que seleccionamos
     const [selectedNumber, setSelectedNumber] = useState(null);
 //con esta funcion valido que todo lo que se escriba en el campo sea unicamente un numero del 1 hasta el 99
    const onHandlerChange = (text) => {
@@ -26,6 +28,7 @@ const onHandleReset = () => {
 const onHandleConfirm = () => {
     //convertimos el valor o el numero ingresado en el campo a un numero, lo parciamos
    const chosenNumber = parseInt(enteredValue, 10);
+   //Hacemos una validacion con if else
    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
        Alert.alert("Numero invalido", "el numero tiene que estar entre el 1 y el 99", [{text: "Entendido", style: "destructive", onPress: onHandleReset}]);
    }else{
@@ -38,16 +41,20 @@ const onHandleConfirm = () => {
    }
 };
 
-const onHandleStartGame = () => null;
+const onHandleStartGame = () => {
+    onHandleStarGame(selectedNumber);
+};
 
+//hacemos una validacion para cuando estemos en estado de confirmacion pase algo y si no no pase nada
 const Confirmed = () => 
+//cuando estemos en estado de confirmacion renderizo un componente
 confirmed ? (
     <Card style={styles.confirmedContainer}>
         <Text style={styles.confirmedTitle}>Numero seleccionado</Text>
         <NumberContainer number={selectedNumber} />
         <Button 
         title="Iniciar juego"
-        onpress={onHandleStartGame}
+        onPress={onHandleStartGame}
         color={colors.primary}
         />
     </Card>
