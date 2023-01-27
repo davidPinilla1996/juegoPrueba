@@ -1,4 +1,5 @@
-import  React, { useState }  from "react";
+import  React  from "react";
+import { useState } from "react";
 import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert} from "react-native";
 import { styles } from "./styles";
 import { Card, NumberContainer } from "../../components";
