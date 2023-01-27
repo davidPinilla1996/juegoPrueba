@@ -10,7 +10,8 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         color: colors.text,
         textAlign: "center",
-        paddingVertical: 20
+        paddingVertical: 20,
+        fontFamily: "Orbitron-Regular"
     },
     inputContainer: {
         justifyContent: "center",
@@ -22,7 +23,8 @@ export const styles = StyleSheet.create({
         fontSize: 15,
         color: colors.text,
         paddingVertical: 5,
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily: "Orbitron-Regular"
     },
     input : {
         width: "100%",
@@ -47,6 +49,7 @@ export const styles = StyleSheet.create({
         marginVertical: 30
     },
     confirmedTitle: {
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: "Orbitron-Regular"
     }
 });

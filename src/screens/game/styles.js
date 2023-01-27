@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
+        fontFamily: "Orbitron-Regular"
     },
     buttonContainer: {
       width: "100%",
