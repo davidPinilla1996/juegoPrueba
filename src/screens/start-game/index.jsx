@@ -26,15 +26,18 @@ const onHandleReset = () => {
     //reinica el estado de confirmacion del TextInput
     setConfirmed(false);
 };
-//evalua el numero que yo escriba dentro del campo
+//con esta funcion evaluo el numero que yo escriba dentro del campo
 const onHandleConfirm = () => {
-    //convertimos el valor o el numero ingresado que en el campo a un numero, lo parciamos
-   const chosenNumber = parseInt(enteredValue, 10);
-   //Hacemos una validacion con if else
+   //declaro el numero que yo e elejido ->chosenNumber<- y lo voy a convertir o parsear en un numero por que inicialmente lo que yo 
+   //escriba dentro de un capo de un input siempre va a ser un string
+   //estamos delimitando la funcion de la app a lo que yo escriba dentro del campo sea solo un numero del 1 al 99
+    const chosenNumber = parseInt(enteredValue, 10);
+   //Hacemos una validacion con if else que lo que se escriba sea un numero, que el numero sea mayor a 0 y que el nmumero sea menor a 99.
    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
+    //utilizamos el componente de alert para avisarle al usuario que no esta cumpliendo con lo que le indicamos
        Alert.alert("Numero invalido", "el numero tiene que estar entre el 1 y el 99", [{text: "Entendido", style: "destructive", onPress: onHandleReset}]);
    }else{
-    //cuando se cumpla la confirmacion el estado pasara a true 
+    //cuando se cumpla la confirmacion el estado pasara a true osea verdadero
     setConfirmed(true);
     //setiando el numero que ya previamente elejimos y lo guardamos dentro de setSelectedNumber
     setSelectedNumber(chosenNumber);
@@ -56,6 +59,7 @@ confirmed ? (
     onHandleStartGame={onHandleStartGame}
     buttonText="Inicio Juego"
     />
+    //y no estamos en estado de confimacion de renderizamos nada
 ) : null;
 
    

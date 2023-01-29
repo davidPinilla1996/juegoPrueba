@@ -13,6 +13,7 @@ const CardNumber = ({
     return (
     <Card style={styles.confirmedContainer}>
         <Text style={styles.confirmedTitle}>Numero seleccionado</Text>
+        {/* colocamos el componente que creamos->NumberContainer<-  que recibe directamente el numero que seleccionamos*/}
         <NumberContainer number={selectedNumber} />
         <Button 
            title={buttonText}
