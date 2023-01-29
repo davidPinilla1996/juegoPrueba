@@ -27,7 +27,7 @@ const onHandleReset = () => {
 };
 //evalua el numero que yo escriba dentro del campo
 const onHandleConfirm = () => {
-    //convertimos el valor o el numero ingresado en el campo a un numero, lo parciamos
+    //convertimos el valor o el numero ingresado que en el campo a un numero, lo parciamos
    const chosenNumber = parseInt(enteredValue, 10);
    //Hacemos una validacion con if else
    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
