@@ -59,6 +59,7 @@ confirmed ? (
     onHandleStartGame={onHandleStartGame}
     buttonText="Inicio Juego"
     />
+    //y no estamos en estado de confimacion de renderizamos nada
 ) : null;
 
    
