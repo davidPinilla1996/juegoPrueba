@@ -2,8 +2,9 @@ import  React  from "react";
 import { useState } from "react";
 import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert} from "react-native";
 import { styles } from "./styles";
-import { Card, NumberContainer } from "../../components";
+import { Card } from "../../components";
 import { colors } from "../../constants";
+import { CardNumber } from "../../components";
 
 
 const StartGame = ({onHandleStarGame}) => {
@@ -50,15 +51,11 @@ const onHandleStartGame = () => {
 const Confirmed = () => 
 //cuando estemos en estado de confirmacion renderizo un componente
 confirmed ? (
-    <Card style={styles.confirmedContainer}>
-        <Text style={styles.confirmedTitle}>Numero seleccionado</Text>
-        <NumberContainer number={selectedNumber} />
-        <Button 
-        title="Iniciar juego"
-        onPress={onHandleStartGame}
-        color={colors.primary}
-        />
-    </Card>
+    <CardNumber
+    selectedNumber={selectedNumber}
+    onHandleStartGame={onHandleStartGame}
+    buttonText="Inicio Juego"
+    />
 ) : null;
 
    
