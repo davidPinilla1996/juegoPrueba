@@ -1,6 +1,6 @@
 import  React  from "react";
 import { useState } from "react";
-import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert} from "react-native";
+import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert, ImageBackground} from "react-native";
 import { styles } from "./styles";
 import { Card } from "../../components";
 import { colors } from "../../constants";
@@ -70,33 +70,38 @@ return (
 <TouchableWithoutFeedback onPress={() => {
     Keyboard.dismiss();
 }}>  
-    <View style={styles.container}> 
-        <Text style={styles.titlee}>Comenzar juegoo</Text>
-        <Card style={styles.inputContainer}>
-            <Text style={styles.label}>Escribe un numero</Text>
-            <TextInput 
-            value={enteredValue}
-            keyboardType="number-pad" 
-            style={styles.input} 
-            placeholder="0"
-            onChangeText={onHandlerChange}
-            />
-            <View style={styles.buttonContainer}>
-                 <Button 
-                  title="Reiniciar"
-                  onpress={onHandleReset}
-                  color={colors.secondary}
-                 />
-                 <Button 
-                  title="Confirmar"
-                  onPress={onHandleConfirm}
-                  color={colors.primary}
-                 />
-            </View>   
-        </Card>
+<ImageBackground source={(require("../../img/juegoDelCalamar.jpg"))} style={styles.image}>
+    <View style={styles.container}>
+            <Text style={styles.titlee}>Comenzar juego</Text>
+            <Card style={styles.inputContainer}>
+                <Text style={styles.label}>Escribe un numero</Text>
+                <TextInput 
+                     value={enteredValue}
+                     keyboardType="number-pad" 
+                     style={styles.input} 
+                     placeholder="0"
+                     placeholderTextColor="#fff" 
+                     onChangeText={onHandlerChange}
+                     //para solo escribir dos numeros maximos en el campo 
+                     maxLength={2}
+                />
+                <View style={styles.buttonContainer}>
+                    <Button 
+                        title="Reiniciar"
+                        onpress={onHandleReset}
+                        color={colors.red}
+                    />
+                    <Button 
+                        title="Confirmar"
+                        onPress={onHandleConfirm}
+                        color={colors.red}
+                    />
+                </View>   
+            </Card>
         <Confirmed />
     </View>
-    </TouchableWithoutFeedback>  
+</ImageBackground>
+ </TouchableWithoutFeedback>  
     )
 }
 
