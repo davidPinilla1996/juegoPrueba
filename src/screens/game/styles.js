@@ -3,21 +3,38 @@ import { colors } from "../../constants/themes/colors";
 
 
 export const styles = StyleSheet.create({
+    image: {
+      height: "100%",
+    },
     container: {
         flex: 1,
-        backgroundColor: colors.white,
         alignItems: "center",
         paddingVertical: 20,
     },
     content: {
-        width: "75%",
+        width: "80%",
         height: 200,
+        marginTop: 20,
+        padding: 15,
         alignItems: "center",
         justifyContent: "space-around",
+        backgroundColor: colors.black,
+        shadowColor: "#d60707",
+        backgroundColor: colors.backgroundFonds,
+        shadowOffset: {
+	    width: 0,
+	    height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+        elevation: 24,
+        borderBottomEndRadius: 60,
+        borderTopLeftRadius: 60,
     },
     title: {
-        fontSize: 18,
-        fontFamily: "Orbitron-Regular"
+        fontSize: 22,
+        fontFamily: "Orbitron-Regular",
+        color: colors.text
     },
     buttonContainer: {
       width: "100%",
