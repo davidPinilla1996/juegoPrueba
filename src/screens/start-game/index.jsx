@@ -72,7 +72,7 @@ return (
 }}>  
 <ImageBackground source={(require("../../img/juegoDelCalamar.jpg"))} style={styles.image}>
     <View style={styles.container}>
-            <Text style={styles.titlee}>Comenzar juego</Text>
+            <Text style={styles.titlee}>Comenzar juegoo</Text>
             <Card style={styles.inputContainer}>
                 <Text style={styles.label}>Escribe un numero</Text>
                 <TextInput 
