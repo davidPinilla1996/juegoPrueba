@@ -6,6 +6,10 @@ export const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
     },
+    image: {
+      height: "100%",
+      width: "100%"
+    },
     titlee: {
         fontSize: 18,
         color: colors.text,

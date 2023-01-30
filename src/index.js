@@ -1,6 +1,6 @@
 //importamos el useState para que me permita saber si hay algun numero seleccionado
 import { useState } from "react";
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator, ImageBackground, View } from "react-native";
 //importamos el Header
 import { Header } from "./components";
 //importamos el styles de src/styles.js

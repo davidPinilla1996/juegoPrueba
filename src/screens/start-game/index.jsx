@@ -1,6 +1,6 @@
 import  React  from "react";
 import { useState } from "react";
-import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert} from "react-native";
+import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert, ImageBackground} from "react-native";
 import { styles } from "./styles";
 import { Card } from "../../components";
 import { colors } from "../../constants";
@@ -70,7 +70,8 @@ return (
 <TouchableWithoutFeedback onPress={() => {
     Keyboard.dismiss();
 }}>  
-    <View style={styles.container}> 
+    <View style={styles.container}>
+    <ImageBackground source={(require("../../img/juegoDelCalamar.png"))} style={styles.image}>
         <Text style={styles.titlee}>Comenzar juegoo</Text>
         <Card style={styles.inputContainer}>
             <Text style={styles.label}>Escribe un numero</Text>
@@ -97,6 +98,7 @@ return (
             </View>   
         </Card>
         <Confirmed />
+        </ImageBackground>
     </View>
     </TouchableWithoutFeedback>  
     )
