@@ -5,14 +5,14 @@ import { colors } from "../../constants";
 
 export const styles = StyleSheet.create({
     container: {
-       width: 50,
-       height: 50,
+       width: 60,
+       height: 60,
        alignItems: "center",
        justifyContent: "center",
-       backgroundColor: colors.secondary,
-       borderColor: colors.primary,
-       borderWidth: 2,
-       borderRadius: 5
+       backgroundColor: colors.white,
+       borderColor: colors.red,
+       borderWidth: 3,
+       borderRadius: 10,
     },
     number: {
         fontSize: 25,

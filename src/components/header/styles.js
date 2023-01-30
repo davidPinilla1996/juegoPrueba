@@ -5,14 +5,14 @@ import { colors } from "../../constants";
 
 export const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.primary,
+        backgroundColor: colors.black,
         height: 120,
+        marginTop: 22,
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: 20
     },
     title: {
-        fontSize: 20,
+        fontSize: 25,
         fontFamily: "Orbitron-Regular",
         color: colors.white
     }

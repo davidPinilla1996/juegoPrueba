@@ -70,8 +70,8 @@ return (
 <TouchableWithoutFeedback onPress={() => {
     Keyboard.dismiss();
 }}>  
-    <View style={styles.container}>
     <ImageBackground source={(require("../../img/juegoDelCalamar.png"))} style={styles.image}>
+    <View style={styles.container}>
         <Text style={styles.titlee}>Comenzar juegoo</Text>
         <Card style={styles.inputContainer}>
             <Text style={styles.label}>Escribe un numero</Text>
@@ -98,9 +98,9 @@ return (
             </View>   
         </Card>
         <Confirmed />
-        </ImageBackground>
     </View>
-    </TouchableWithoutFeedback>  
+</ImageBackground>
+ </TouchableWithoutFeedback>  
     )
 }
 
