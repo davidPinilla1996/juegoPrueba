@@ -5,11 +5,15 @@ import { Card, NumberContainer } from "../../components";
 import { colors } from '../../constants';
 import { styles } from "./styles";
 
-
+                          //setiamos en que rago deberia estar ese numero que quiero generar 
+                          //tengo que tener como parametro un minimo, un maximo y un numero que quiero excluir que no me genere
 const generateRandomNumber = (min, max, exclude) => {
+  //el valor minimo deberia ser un redondeo de ese numero minimo 
   min = Math.ceil(min)
+  //lo mismo con el numero maximo que lo redondee
   max = Math.floor(max)
   const randomNumber = Math.floor(Math.random() * (max - min) + min);
+  //y este numero que yo estoy generando lo voy a evaluar 
   if (randomNumber === exclude) {
     generateRandomNumber(min, max, exclude)
   }else{
