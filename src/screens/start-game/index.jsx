@@ -6,7 +6,8 @@ import { Card } from "../../components";
 import { colors } from "../../constants";
 import { CardNumber } from "../../components";
 
-
+                // este onHandleStarGame lo voy a recibir como propiedad en la pantalla de inicio de juego
+                //para yo llamarla cuando le de click en en el boton de ->onHandleStartGame<-
 const StartGame = ({onHandleStarGame}) => {
 
     const [enteredValue, setEnteredValue] = useState(""); 
@@ -45,8 +46,10 @@ const onHandleConfirm = () => {
     setEnteredValue("");
    }
 };
-
+//creamos una funcion que va a recibir el numero que seleccionamos en comenzar juego
 const onHandleStartGame = () => {
+    //llamamos esta fucnion y le pasamos el numero que seleccionamos en la pantalla de comenzar juego
+    //cuando yo le de click en iniciar juego reciba el numero y cambie de pantalla
     onHandleStarGame(selectedNumber);
 };
 
