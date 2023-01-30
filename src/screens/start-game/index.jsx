@@ -72,31 +72,32 @@ return (
 }}>  
     <ImageBackground source={(require("../../img/juegoDelCalamar.png"))} style={styles.image}>
     <View style={styles.container}>
-        <Text style={styles.titlee}>Comenzar juegoo</Text>
-        <Card style={styles.inputContainer}>
-            <Text style={styles.label}>Escribe un numero</Text>
-            <TextInput 
-            value={enteredValue}
-            keyboardType="number-pad" 
-            style={styles.input} 
-            placeholder="0"
-            onChangeText={onHandlerChange}
-            //para solo escribir dos numeros maximos en el campo 
-            maxLength={2}
-            />
-            <View style={styles.buttonContainer}>
-                 <Button 
-                  title="Reiniciar"
-                  onpress={onHandleReset}
-                  color={colors.secondary}
-                 />
-                 <Button 
-                  title="Confirmar"
-                  onPress={onHandleConfirm}
-                  color={colors.primary}
-                 />
-            </View>   
-        </Card>
+            <Text style={styles.titlee}>Comenzar juegoo</Text>
+            <Card style={styles.inputContainer}>
+                <Text style={styles.label}>Escribe un numero</Text>
+                <TextInput 
+                     value={enteredValue}
+                     keyboardType="number-pad" 
+                     style={styles.input} 
+                     placeholder="0"
+                     placeholderTextColor="#fff" 
+                     onChangeText={onHandlerChange}
+                     //para solo escribir dos numeros maximos en el campo 
+                     maxLength={2}
+                />
+                <View style={styles.buttonContainer}>
+                    <Button 
+                        title="Reiniciar"
+                        onpress={onHandleReset}
+                        color={colors.red}
+                    />
+                    <Button 
+                        title="Confirmar"
+                        onPress={onHandleConfirm}
+                        color={colors.red}
+                    />
+                </View>   
+            </Card>
         <Confirmed />
     </View>
 </ImageBackground>
