@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
         paddingVertical: 20,
     },
     content: {
-        width: "80%",
-        height: 200,
+        width: "85%",
+        height: 210,
         marginTop: 20,
         padding: 15,
         alignItems: "center",

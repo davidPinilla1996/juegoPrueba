@@ -27,9 +27,9 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.red
     },
     inputContainer: {
+        width: "75%",
         justifyContent: "center",
         alignItems: "center",
-        marginHorizontal: 20,
         paddingVertical: 20,
         borderBottomEndRadius: 40,
         borderTopLeftRadius: 40,
@@ -52,6 +52,7 @@ export const styles = StyleSheet.create({
     },
     input : {
         width: "100%",
+        maxWidth: 40,
         borderBottomColor: colors.white,
         borderBottomWidth: 1,
         minWidth: 70,
@@ -62,7 +63,7 @@ export const styles = StyleSheet.create({
     },
     buttonContainer: {
         flexDirection: "row",
-        width: "75%",
+        width: "100%",
         justifyContent: "space-around",
         marginTop: 20
     }
