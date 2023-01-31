@@ -5,7 +5,7 @@ import { StyleSheet, Dimensions, StatusBar } from "react-native";
 import { colors } from "../../constants";
 
 //atraves del ->Dimensions<- podemos acceder a un metodo que se llama get y el get nos permite saber el ancho o el alto de la 
-//pantalla o de la pantalla en este caso vamos a saber el de la pantalla ->screen<-
+//pantalla este caso vamos a saber el  ancho de la pantalla ->screen<-
      //y vamos a acceder directamente al ancho y al alto ->width, height<-
 const {height} = Dimensions.get("screen")
 
