@@ -11,9 +11,18 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.black,
         borderBottomEndRadius: 40,
         borderTopLeftRadius: 40,
+        shadowColor: "#d60707",
+        backgroundColor: colors.backgroundFonds,
+        shadowOffset: {
+	    width: 0,
+	    height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+        elevation: 24,
     },
     confirmedTitle: {
-        fontSize: 22,
+        fontSize: 20,
         fontFamily: "Orbitron-Regular",
         color: colors.text,
     }
