@@ -1,11 +1,11 @@
 //importamos el StyleSheet para poder estilizar 
 //El Dimensions sirve para saber cual es el alto y el cacho del dispositivo
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, StatusBar } from "react-native";
 //importamos el  
 import { colors } from "../../constants";
 
 //atraves del ->Dimensions<- podemos acceder a un metodo que se llama get y el get nos permite saber el ancho o el alto de la 
-//pantalla o de la pantalla en este caso vamos a saber el de la pantalla ->screen<-
+//pantalla este caso vamos a saber el  ancho de la pantalla ->screen<-
      //y vamos a acceder directamente al ancho y al alto ->width, height<-
 const {height} = Dimensions.get("screen")
 
@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
         marginTop: 22,
         justifyContent: "center",
         alignItems: "center",
+        marginTop: StatusBar.currentHeight
     },
     title: {
         fontSize: 25,
