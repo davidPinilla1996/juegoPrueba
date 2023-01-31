@@ -1,6 +1,6 @@
 //importamos el StyleSheet para poder estilizar 
 //El Dimensions sirve para saber cual es el alto y el cacho del dispositivo
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, StatusBar } from "react-native";
 //importamos el  
 import { colors } from "../../constants";
 
@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
         marginTop: 22,
         justifyContent: "center",
         alignItems: "center",
+        marginTop: StatusBar.currentHeight
     },
     title: {
         fontSize: 25,
