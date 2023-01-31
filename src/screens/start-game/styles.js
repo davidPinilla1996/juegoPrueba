@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
       width: "100%"
     },
     titlee: {
-        fontSize: 27,
+        fontSize: 23,
         marginBottom: 20,
         borderRadius: 20,
         padding: 25,
