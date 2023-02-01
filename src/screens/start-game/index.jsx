@@ -1,6 +1,17 @@
 import  React  from "react";
 import { useState } from "react";
-import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert, ImageBackground} from "react-native";
+import { View, 
+    Text, 
+    TextInput, 
+    Button, 
+    TouchableWithoutFeedback,
+    KeyboardAvoidingView,
+    Platform, 
+    Keyboard, 
+    Alert, 
+    ImageBackground,
+    ScrollView
+} from "react-native";
 import { styles } from "./styles";
 import { Card } from "../../components";
 import { colors } from "../../constants";
@@ -67,10 +78,12 @@ confirmed ? (
 
    
 return (
+<KeyboardAvoidingView style={styles.containerScroll} behavior={Platform.OS === "ios" ? "height" : "padding"}>  
 <TouchableWithoutFeedback onPress={() => {
     Keyboard.dismiss();
 }}>  
 <ImageBackground source={(require("../../img/juegoDelCalamar.jpg"))} style={styles.image}>
+    <ScrollView style={styles.containerScroll}>
     <View style={styles.container}>
             <Text style={styles.titlee}>Comenzar juego</Text>
             <Card style={styles.inputContainer}>
@@ -100,10 +113,12 @@ return (
             </Card>
         <Confirmed />
     </View>
+</ScrollView>  
 </ImageBackground>
- </TouchableWithoutFeedback>  
-    )
-}
+</TouchableWithoutFeedback>  
+</KeyboardAvoidingView>  
+    );
+};
 
 
 export default StartGame;
