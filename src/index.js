@@ -1,6 +1,6 @@
 //importamos el useState para que me permita saber si hay algun numero seleccionado
 import { useState } from "react";
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator, ImageBackground, View } from "react-native";
 //importamos el Header
 import { Header } from "./components";
 //importamos el styles de src/styles.js
@@ -33,13 +33,19 @@ const App = () => {
     setGuessRounds(rounds);
    }
 
+
+   const onHandleRestartGame = () => {
+    setUserNumber(null);
+    setGuessRounds(0);
+   }
+
 //creamos una constante o componente que me permita validar si existe ese numero seleccionado o no 
   const Content = () => {
     if (userNumber && guessRounds <= 0){
       return <Game selectedNumber={userNumber} onHandleGameOver={onHandleGameOver} />;
     }
     if (guessRounds > 0) {
-       return <GameOver />;
+       return <GameOver  onHandleRestartGame={onHandleRestartGame} rounds={guessRounds} selectedNumber={userNumber}/>;
     }
      return <StartGame onHandleStarGame={onHandleStarGame} />;
   }; 
