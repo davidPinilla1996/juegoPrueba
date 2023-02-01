@@ -82,12 +82,8 @@ return (
 <TouchableWithoutFeedback onPress={() => {
     Keyboard.dismiss();
 }}>  
-<<<<<<< HEAD
-    <ImageBackground source={(require("../../img/juegoDelCalamar.jpg"))} style={styles.image}>
-=======
 <ImageBackground source={(require("../../img/juegoDelCalamar.jpg"))} style={styles.image}>
     <ScrollView style={styles.containerScroll}>
->>>>>>> juegoprueba
     <View style={styles.container}>
             <Text style={styles.titlee}>Comenzar juego</Text>
             <Card style={styles.inputContainer}>
