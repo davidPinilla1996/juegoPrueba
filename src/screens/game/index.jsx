@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState } from "react";
-import { Button, ImageBackground, Text, View } from 'react-native';
+import { useState, useRef, useEffect } from "react";
+import { Button, ImageBackground, Text, View, Alert } from 'react-native';
 import { Card, NumberContainer } from "../../components";
 import { colors } from '../../constants';
 import { styles } from "./styles";
@@ -20,10 +19,44 @@ const generateRandomNumber = (min, max, exclude) => {
     return randomNumber;
   }
 }
-
-const Game = ({ selectedNumber }) => {
+//Este componente esta recibiendo el numero seleccionado y aparte le vamos a pasar un metodo que me permita finalizar el juego
+const Game = ({ selectedNumber, onHandleGameOver }) => {
   
-  const [currentGuess, setCurrentGuess] = useState(generateRandomNumber(1, 100))
+  const [currentGuess, setCurrentGuess] = useState(generateRandomNumber(1, 100, selectedNumber))
+  const [ rounds, setRounds] = useState(0)
+
+
+  const currentLow = useRef(1)
+  const currentHigh = useRef(100)
+
+  useEffect(() => {
+       if (currentGuess === selectedNumber) { 
+        onHandleGameOver(rounds);
+       }
+  }, [currentGuess, selectedNumber, onHandleGameOver ]);
+
+
+  const onHandleNextGuess = (direction) => {
+    if( 
+    (direction === "lower" && currentGuess < selectedNumber) ||
+    (direction === "greater" && currentGuess > selectedNumber) 
+    ){
+      Alert.alert("No mientas!",  "Sabes que eso es incorrecto...", [
+        { text: "Perdon", style: "Cancel"},
+      ]);
+      return;
+    }
+
+    if (direction === "lower") {
+      currentHigh.current = currentGuess;
+    } else {
+      currentLow.current = currentGuess;
+    }
+
+    const nextNumber = generateRandomNumber(currentLow.current, currentHigh.current, currentGuess);
+    setCurrentGuess(nextNumber);
+    setRounds(currentRounds => currentRounds + 1);
+  };
   
   return (
 <ImageBackground source={(require("../../img/juegoDelCalamarEle.jpg"))} style={styles.image}>
@@ -32,8 +65,8 @@ const Game = ({ selectedNumber }) => {
              <Text style={styles.title}>Numero del oponente</Text>
              <NumberContainer  number={currentGuess} />
              <View style={styles.buttonContainer}>
-                 <Button title='Menor' onPress={() =>{}} color={colors.red} />
-                 <Button title='Mayor' onPress={() =>{}} color={colors.red} />
+                 <Button title='Menor' onPress={() => onHandleNextGuess("lower")} color={colors.red} />
+                 <Button title='Mayor' onPress={() => onHandleNextGuess("greater")} color={colors.red} />
              </View>
          </Card>
     </View>
