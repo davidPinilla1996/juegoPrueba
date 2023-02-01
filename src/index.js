@@ -33,13 +33,19 @@ const App = () => {
     setGuessRounds(rounds);
    }
 
+
+   const onHandleRestartGame = () => {
+    setUserNumber(null);
+    setGuessRounds(0);
+   }
+
 //creamos una constante o componente que me permita validar si existe ese numero seleccionado o no 
   const Content = () => {
     if (userNumber && guessRounds <= 0){
       return <Game selectedNumber={userNumber} onHandleGameOver={onHandleGameOver} />;
     }
     if (guessRounds > 0) {
-       return <GameOver />;
+       return <GameOver  onHandleRestartGame={onHandleRestartGame} rounds={guessRounds} selectedNumber={userNumber}/>;
     }
      return <StartGame onHandleStarGame={onHandleStarGame} />;
   }; 
